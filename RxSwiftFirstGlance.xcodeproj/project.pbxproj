@@ -13,6 +13,7 @@
 		9B7B97082321A2FA00F56961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B7B97072321A2FA00F56961 /* Assets.xcassets */; };
 		9B7B970B2321A2FA00F56961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7B97092321A2FA00F56961 /* LaunchScreen.storyboard */; };
 		9B7B97162321A2FA00F56961 /* RxSwiftFirstGlanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7B97152321A2FA00F56961 /* RxSwiftFirstGlanceTests.swift */; };
+		9B7B97232321A5ED00F56961 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7B97222321A5ED00F56961 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		9B7B97112321A2FA00F56961 /* RxSwiftFirstGlanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSwiftFirstGlanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7B97152321A2FA00F56961 /* RxSwiftFirstGlanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftFirstGlanceTests.swift; sourceTree = "<group>"; };
 		9B7B97172321A2FA00F56961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B7B97222321A5ED00F56961 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B7B97232321A5ED00F56961 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 				9B7B96FF2321A2F800F56961 /* RxSwiftFirstGlance */,
 				9B7B97142321A2FA00F56961 /* RxSwiftFirstGlanceTests */,
 				9B7B96FE2321A2F800F56961 /* Products */,
+				9B7B97212321A5EC00F56961 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +100,14 @@
 			path = RxSwiftFirstGlanceTests;
 			sourceTree = "<group>";
 		};
+		9B7B97212321A5EC00F56961 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B7B97222321A5ED00F56961 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +118,7 @@
 				9B7B96F92321A2F800F56961 /* Sources */,
 				9B7B96FA2321A2F800F56961 /* Frameworks */,
 				9B7B96FB2321A2F800F56961 /* Resources */,
+				9B7B97202321A55900F56961 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -191,6 +204,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B7B97202321A55900F56961 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS//RxSwift.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9B7B96F92321A2F800F56961 /* Sources */ = {
@@ -361,6 +397,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxSwiftFirstGlance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,6 +418,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxSwiftFirstGlance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
